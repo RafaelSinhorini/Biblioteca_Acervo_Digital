@@ -35,5 +35,5 @@ Para rodar o projeto localmente:
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/SEU_USUARIO/Biblioteca_Acervo_Digital.git
+   git clone https://github.com/RafaelSinhorini/Biblioteca_Acervo_Digital.git
 
