@@ -1,0 +1,650 @@
+/* Zera margens e padding padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.tela-inicial  {
+  height: 100%;
+  width: 100%;
+  font-family: 'Mulish', sans-serif;
+  background-color: #37312f;
+}
+
+/* CONTAINER GERAL COM AS IMAGENS DE FUNDO TELA-INICIAL */
+.tela-inicial .container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image:
+    url('/static/imagens/Subtract.png'),  /* imagem da frente (com transparência) */
+    url('/static/imagens/fundo.png');     /* imagem de fundo */
+  background-size: contain   ;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* TOPO DA TELA INICIAL*/
+.tela-inicial .topo {
+  height: 18vh; /* 12% da altura da tela */
+  max-width: 65vw; /* até 69% da largura da tela */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  z-index: 2;
+
+}
+
+.topo h1 {
+  font-family: 'NanumGothicCoding', monospace;
+  font-size: 2em;
+  letter-spacing: 0.5em;
+  text-shadow:
+  -1px -1px 0 black,
+   1px -1px 0 black,
+  -1px  1px 0 black,
+   1px  1px 0 black;
+
+}
+
+.link-login {
+  background-color: black;
+  padding: 5px;
+  color: #f29121;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s;
+  letter-spacing: 0.3em;
+}
+
+.link-login:hover {
+  background-color: #f29121;
+  color: black; /* inversão elegante */
+}
+
+.tela-inicial .meio {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 65vw;
+  width: 100%;
+  padding: 0 2vw;
+  margin: 0 auto;
+  text-align: right;
+
+}
+
+
+.tela-inicial .mensagem-central {
+  font-family: 'Mulish',sans-serif;
+  font-size: 1em;
+  line-height: 280%;
+  letter-spacing: 0.42em;
+  text-align: right;
+  color: white;
+  max-width: 40vw;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: .5vw;
+  margin-left: auto;
+  margin-right: 0;
+
+}
+
+/* RODAPÉ */
+.rodape {
+  height: 5%;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 0.9vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1vw;
+}
+
+/* ----------------  TELA DE LOGIN -------------------------------*/
+
+.tela-login  {
+  height: 100%;
+  width: 100%;
+  font-family: 'Mulish', sans-serif;
+  background-color: #eff1f3;
+}
+
+.tela-login .container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-size: contain   ;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+
+}
+
+/* TOPO DA TELA login*/
+.tela-login .topo {
+  height: 18vh; /* 12% da altura da tela */
+  max-width: 69vw; /* até 69% da largura da tela */
+  min-width: 250px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  z-index: 2;
+}
+
+  .tela-login .meio {   /* continuar daqui  erro não aparece tela de meio no login */
+  min-width: 250px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 30vw;
+  width: 90%;
+  padding: 0 2vw;
+  margin: 0 auto;
+
+}
+
+.formulario-login {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Mulish', sans-serif;
+}
+
+.formulario-login h4 {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+.formulario-login form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-login label {
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.formulario-login input {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.formulario-login button {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  background-color: #ec5b5b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-login button:hover {
+  background-color: #d14444;
+}
+
+.link-criar-conta {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.link-criar-conta a {
+  color: #ec5b5b;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.link-criar-conta a:hover {
+  color: #a63030;
+}
+
+/* ----------------  TELA DE CADASTRO -------------------------------*/
+
+.formulario-cadastro {
+  width: 100%;
+  max-width: 400px;
+  min-width: 280px;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Mulish', sans-serif;
+  margin: 0 auto;
+}
+
+.formulario-cadastro h4 {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+.formulario-cadastro form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-cadastro label {
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.formulario-cadastro input[type="text"],
+.formulario-cadastro input[type="email"],
+.formulario-cadastro input[type="password"],
+.formulario-cadastro input[type="date"] {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.tipo-usuario {
+  margin-top: 1rem;
+}
+
+.tipo-usuario .opcoes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.1rem;
+}
+
+.tipo-usuario label {
+  font-weight: normal;
+}
+
+.formulario-cadastro button {
+  margin-top: 1.2rem;
+  padding: 0.5rem;
+  background-color: #ec5b5b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-cadastro button:hover {
+  background-color: #d14444;
+}
+
+/* ----------------  TELA HOME -------------------------------*/
+.tela-home {
+  font-family: 'Mulish', sans-serif;
+  background-color: #37312f;
+  min-height: 100vh;
+}
+
+.tela-home .container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 65vw;
+  margin: 0 auto;
+}
+
+.tela-home .topo {
+  height: 18vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2vw;
+  color: white;
+}
+
+.tela-home .topo h1 {
+  letter-spacing: 0.4em;
+  font-family: 'NanumGothicCoding', monospace;
+
+}
+
+.link-logo {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.link-logo .texto-hover {
+  display: none;
+}
+
+.link-logo:hover .texto-normal {
+  display: none;
+}
+
+.link-logo:hover .texto-hover {
+  display: inline;
+  color: #ec5b5b; /* ou qualquer outra cor que quiser no hover */
+  background-color: #f29121;
+}
+
+.btn-cadastrar-trabalho {
+  background-color: black;
+  color: #f29121;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.btn-cadastrar-trabalho:hover {
+  background-color: #f29121;
+  color: black;
+}
+
+.tela-home .meio {
+  flex: 1;
+  padding: 2vw;
+  color: white;
+
+}
+
+.form-busca-home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5vw;
+  align-items: end;
+}
+
+.form-busca-home .campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-busca-home label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.form-busca-home input,
+.form-busca-home select {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-busca-home button {
+  grid-column: span 2;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background-color: #ec5b5b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-busca-home button:hover {
+  background-color: #d14444;
+}
+
+.buscar-trabalhos-container {
+  width: 100%;
+  max-width: 1200px; /* mesmo valor usado na .topo */
+  margin: 2rem auto 0; /* auto nas laterais = centraliza */
+  display: flex;
+  justify-content: center;
+
+}
+
+
+
+.btn-buscar-trabalhos {
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem 2rem;
+  background-color: #f29121;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+
+.btn-buscar-trabalhos:hover {
+  background-color: #d67f1c;
+  transform: scale(1.02);
+}
+
+.resultado-busca {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resultado-busca h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.lista-trabalhos {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-trabalho {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item-trabalho:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.item-trabalho h3 {
+  font-size: 20px;
+  color: #ec5b5b;
+  margin-bottom: 10px;
+}
+
+.item-trabalho p {
+  margin: 5px 0;
+  color: #444;
+}
+
+.item-trabalho a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #ffffff;
+  background-color: #ec5b5b;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.item-trabalho a:hover {
+  background-color: #d94c4c;
+}
+
+/* ----------------  TELA CADASTRAR TRABALHOS -------------------------------*/
+.tela-cadastrar {
+  font-family: 'Mulish', sans-serif;
+  background-color: #37312f;
+  min-height: 100vh;
+  color: white;
+}
+
+.tela-cadastrar .container {
+  max-width: 65vw;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tela-cadastrar .topo {
+  height: 18vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2vw;
+}
+
+.tela-cadastrar .topo h1 {
+  letter-spacing: 0.4em;
+  font-family: 'NanumGothicCoding', monospace;
+  color: white;
+}
+
+.formulario-cadastro {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: #333;
+  max-width: 45vw;
+}
+
+.formulario-cadastro h2 {
+  text-align: center;
+  color: #ec5b5b;
+  margin-bottom: 1.5rem;
+}
+
+.formulario-cadastro .campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.formulario-cadastro label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.formulario-cadastro input,
+.formulario-cadastro select,
+.formulario-cadastro textarea {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.formulario-cadastro textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.formulario-cadastro button {
+  background-color: #f29121;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.formulario-cadastro button:hover {
+  background-color: #d67f1c;
+
+}
+
+.aviso-curso-container {
+  display: flex;
+  justify-content: center; /* Alinha a caixa horizontalmente */
+  align-items: center; /* Alinha a caixa verticalmente (opcional, dependendo da altura) */
+  width: 100%; /* Para ocupar a largura total disponível */
+}
+
+.aviso-curso {
+  background-color: #f9f1e7;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  font-family: 'Mulish', sans-serif;
+  min-width: 45vw;
+  text-align: center; /* centraliza o texto dentro da caixa */
+
+}
+
+.aviso-curso h2 {
+  font-size: 1.2rem;
+  color: #f29121;
+}
+
+.aviso-curso a {
+  color: black;
+  text-decoration: underline;
+  margin-left: 0.5rem;
+}
+
+.aviso-curso a:hover {
+  color: #d14444;
+}
+
+.mensagem-sucesso {
+  background-color: #28a745; /* Cor de fundo verde */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px; /* Distância do próximo elemento */
+  font-size: 16px;
+}
+
+.mensagem-erro {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Acervo Digital - Tela Inicial</title>
+
+	<!-- CSS do projeto -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="tela-inicial">
+	<div class="container">
+
+		<!-- TOPO -->
+		<div class="topo">
+			<h1><span style="color: #ec5b5b;">ACERVO</span> DIGITAL</h1>
+			<a href="{{ url_for('login') }}" class="link-login">LOGIN&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;ÁREA RESTRITA</a>
+		</div>
+
+		<!-- MEIO -->
+		<div class="meio">
+			<p class="mensagem-central">
+				Com o ACERVO DIGITAL o seu<br>
+				trabalho acadêmico ganha<br>
+				visibilidade.<br>
+				Faça parte de uma rede com<br>
+				milhares de alunos.
+			</p>
+		</div>
+
+		<!-- RODAPÉ -->
+		<div class="rodape">
+			Desenvolvido por: Alunos UNIVESP – Todos os direitos autorais reservados.
+		</div>
+
+	</div>
+</body>
+</html>

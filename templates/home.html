@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home do Sistema</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+
+  </head>
+<body class="tela-home">
+  <div class="container">
+    <!-- TOPO -->
+    <div class="topo">
+     <h1>
+      <a href="{{ url_for('tela_inicial') }}" class="link-logo">
+        <span class="texto-normal">
+        <span style="color: #ec5b5b;">ACERVO</span> DIGITAL
+        </span>
+        <span class="texto-hover">SAIR DO SISTEMA</span>
+      </a>
+    </h1>
+
+
+      <!-- Botão visível apenas para docentes -->
+      <a href="{{ url_for('cadastrar_trabalho') }}" class="btn-cadastrar-trabalho">Cadastrar Trabalho</a>
+
+    </div>
+
+<!-- ÁREA DE BUSCA -->
+<div class="meio">
+    <form class="form-busca-home" action="#" method="GET">
+      <div class="campo">
+        <label for="titulo">Título: (digite o nome do trabalho)</label>
+        <input type="text" id="titulo" name="titulo">
+      </div>
+  
+      <div class="campo">
+        <label for="turma">Turma:</label>
+        <input type="text" id="turma" name="turma">
+      </div>
+  
+      <div class="campo">
+        <label for="modalidade">Modalidade: (escolha uma opção)</label>
+        <select id="modalidade" name="modalidade">
+          <option value="">Selecione</option>
+          <option value="tecnico">Curso Técnico</option>
+          <option value="medio">Ensino Médio</option>
+          <option value="qualificacao">Qualificação Profissional</option>
+        </select>
+      </div>
+  
+      <div class="campo">
+        <label for="curso">Curso: (escolha uma opção)</label>
+        <select id="curso" name="curso">
+          <option value="">Selecione</option>
+          <option value="administracao">Administração</option>
+          <option value="enfermagem">Enfermagem</option>
+          <option value="logistica">Logística</option>
+          <option value="informatica">Informática</option>
+          <option value="design">Design de Interiores</option>
+          <option value="estetica">Estética</option>
+          <option value="podologia">Podologia</option>
+          <option value="teatro">Teatro</option>
+        </select>
+      </div>
+  
+      <!-- Botão Buscar Trabalhos -->
+      <div class="buscar-trabalhos-container">
+        <button type="submit" class="btn-buscar-trabalhos">BUSCAR TRABALHOS</button>
+      </div>
+    </form>
+  </div> <!-- FIM DA DIV MEIO-->
+</div> <!-- Fim da div.meio -->
+
+<!-- RESULTADOS DA BUSCA -->
+<div class="resultado-busca">
+  {% if trabalhos %}
+    <h2>Trabalhos Encontrados:</h2>
+    <ul class="lista-trabalhos">
+      {% for trabalho in trabalhos %}
+        <li class="item-trabalho">
+          <h3>{{ trabalho.titulo }}</h3>
+          <p><strong>Curso:</strong> {{ trabalho.curso }}</p>
+          <p><strong>Status:</strong> {{ trabalho.status }}</p>
+          <p><strong>Descrição:</strong> {{ trabalho.descricao }}</p>
+          {% if trabalho.link %}
+            <p><a href="{{ trabalho.link }}" target="_blank">Acessar Trabalho</a></p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Nenhum trabalho encontrado.</p>
+  {% endif %}
+</div>
+
+

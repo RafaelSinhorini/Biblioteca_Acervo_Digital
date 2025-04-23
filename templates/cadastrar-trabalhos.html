@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastrar Trabalhos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+</head>
+<body class="tela-cadastrar">
+  <div class="container">
+
+    <!-- Topo da página -->
+    <header class="topo">
+      <a href="{{ url_for('home') }}" class="link-logo">
+        <span class="texto-normal">HOME</span>
+        <span class="texto-hover">VOLTAR</span>
+      </a>
+      <h1>CADASTRO DE TRABALHOS</h1>
+    </header>
+
+    <!-- Aviso para cadastro de curso -->
+    <div class="aviso-curso-container">
+      <div class="aviso-curso">
+        <h2>Já cadastrou o seu curso?
+          <a href="{{ url_for('cadastrar_curso') }}">Não? Então clique aqui para cadastrar!</a>
+        </h2>
+      </div>
+    </div>
+
+     <!-- Mensagem de sucesso -->
+    {% if mensagem %}
+      <div class="mensagem-sucesso">{{ mensagem }}</div>
+    {% endif %}
+
+    <!-- Mensagem de erro -->
+    {% if mensagem_erro %}
+      <div class="mensagem-erro">{{ mensagem_erro }}</div>
+    {% endif %}
+
+    <!-- Formulário -->
+    <main>
+      <form class="formulario-cadastro" action="{{ url_for('cadastrar_trabalho') }}" method="post">
+        <h2>Preencha os dados do trabalho</h2>
+
+        <div class="campo">
+          <label for="titulo">Título do Trabalho</label>
+          <input type="text" id="titulo" name="titulo" required>
+        </div>
+
+        <div class="campo">
+          <label for="titulo">ID do Curso</label>
+          <input type="text" id="id_curso" name="id_curso" required>
+        </div>
+
+        <div class="campo">
+          <label for="descricao">Descrição</label>
+          <textarea id="descricao" name="descricao" required></textarea>
+        </div>
+
+        <div class="campo">
+          <label for="palavras_chave">Palavras Chave - (separe as palavras com vírgula: ex. saúde, idosos, prevenção)</label>
+          <input type="text" id="palavras_chave" name="palavras_chave" required>
+        </div>
+
+        <div class="campo">
+          <label for="link">Link para o trabalho (Google Drive, YouTube, etc.)</label>
+          <input type="url" id="link" name="link" required>
+        </div>
+
+        <button type="submit">Cadastrar Trabalho</button>
+      </form>
+    </main>
+
+  </div>
+</body>
+</html>
+

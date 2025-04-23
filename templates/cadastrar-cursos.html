@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastrar Cursos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish&family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+</head>
+<body class="tela-cadastrar">
+  <div class="container">
+
+    <!-- Topo da página -->
+    <header class="topo">
+      <a href="{{ url_for('home') }}" class="link-logo">
+        <span class="texto-normal">HOME</span>
+        <span class="texto-hover">VOLTAR</span>
+      </a>
+      <h1>CADASTRO DE CURSOS</h1>
+    </header>
+
+      <!-- Mensagem de sucesso -->
+  {% if mensagem %}
+    <div class="mensagem-sucesso">{{ mensagem }}</div>
+  {% endif %}
+
+        <!-- Mensagem de erro -->
+    {% if mensagem_erro %}
+      <div class="mensagem-erro">{{ mensagem_erro }}</div>
+    {% endif %}
+
+    <!-- Formulário -->
+    <main>
+      <form class="formulario-cadastro" action="{{ url_for('cadastrar_curso') }}" method="post">
+        <h2>Preencha os dados do curso</h2>
+
+        <!-- Campo Área do Curso -->
+        <div class="campo">
+          <label for="area">Área do Curso</label>
+          <select id="area" name="area" required>
+            <option value="">Selecione uma área</option>
+            <option value="Beleza e Estética">Beleza e Estética</option>
+            <option value="Bem-Estar">Bem-Estar</option>
+            <option value="Comunicação e Marketing">Comunicação e Marketing</option>
+            <option value="Desenvolvimento Social">Desenvolvimento Social</option>
+            <option value="Design e Arqutetura">Design e Arqutetura</option>
+            <option value="Educação">Educação</option>
+            <option value="Gastronomia e Alimentação">Gastronomia e Alimentação</option>
+            <option value="Gestão e Negócios">Gestão e Negócios</option>
+            <option value="Idiomas">Idiomas</option>
+            <option value="Meio Ambiente e Seg Trabalho">Meio Ambiente e Seg Trabalho</option>
+            <option value="Moda">Moda</option>
+            <option value="Saúde">Saúde</option>
+            <option value="Tecnologia da Informação">Tecnologia da Informação</option>
+            <option value="Turismo">Turismo</option>
+          </select>
+        </div>
+
+        <!-- Campo Tipo de Curso -->
+        <div class="campo">
+          <label for="tipo">Tipo de Curso</label>
+          <select id="tipo" name="tipo" required>
+            <option value="">Selecione um tipo</option>
+            <option value="Curso Livre">Curso Livre</option>
+            <option value="Curso Técnico">Curso Técnico</option>
+            <option value="Qualificação Profissional">Qualificação Profissional</option>
+          </select>
+        </div>
+
+        <!-- Campo Nome do Curso -->
+        <div class="campo">
+          <label for="nome">Nome do Curso</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+
+        <!-- Campo Turma -->
+        <div class="campo">
+          <label for="turma">Turma</label>
+          <input type="text" id="turma" name="turma" required>
+        </div>
+
+        <!-- Campo Data de Início -->
+        <div class="campo">
+          <label for="data_inicio">Data de Início</label>
+          <input type="date" id="data_inicio" name="data_inicio" required>
+        </div>
+
+        <!-- Campo Data de Conclusão -->
+        <div class="campo">
+          <label for="data_conclusao">Data de Conclusão</label>
+          <input type="date" id="data_conclusao" name="data_conclusao" required>
+        </div>
+
+        <button type="submit">Cadastrar Curso</button>
+      </form>
+    </main>
+
+  </div>
+</body>
+</html>

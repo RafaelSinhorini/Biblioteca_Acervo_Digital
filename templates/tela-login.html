@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Acervo Digital - Login</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body class="tela-login">
+	<div class="container">
+
+		<!-- TOPO -->
+		<div class="topo">
+			<h1><span style="color: #ec5b5b;">ACERVO</span> DIGITAL</h1>
+			
+		</div>
+
+		<!-- MEIO -->
+		<div class="meio">
+									
+			<div class="formulario-login">
+				<h4>Acesse sua conta</h4>
+				<form action="#" method="POST">
+				  <label for="nome">Nome Completo</label>
+				  <input type="text" id="nome" name="nome" required>
+			  
+				  <label for="email">E-mail</label>
+				  <input type="email" id="email" name="email" required>
+			  
+				  <label for="senha">Senha</label>
+				  <input type="password" id="senha" name="senha" required>
+			  
+				  <a href="{{ url_for('home') }}">
+  					<button type="button">Acessar</button>
+				  </a>
+
+			 
+				</form>
+				<p class="link-criar-conta">
+					Ainda não tem acesso? <a href="{{ url_for('cadastro') }}">Crie sua conta</a>
+				</p>
+
+			  </div>
+			  
+			
+		</div>
+
+		<!-- RODAPÉ -->
+		<div class="rodape">
+			Desenvolvido por: Alunos UNIVESP – Todos os direitos autorais reservados.
+		</div>
+
+	</div>
+</body>
+</html>
